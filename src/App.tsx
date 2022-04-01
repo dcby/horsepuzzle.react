@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Board from "./game/Board";
+import { Level } from "./model/game";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  #level = new Level();
+
+  #handleCellTouch = (x: number, y: number) => {
+    this.#level.touch(x, y);
+    this.forceUpdate();
+  };
+
+  public render() {
+    return (
+      <div className="App">
+        <Board cells={this.#level.cells} onCellTouch={this.#handleCellTouch} />
+      </div>
+    );
+  }
 }
-
-export default App;

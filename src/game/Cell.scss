@@ -1,0 +1,48 @@
+.Cell {
+    display: flex;
+    width: 65px;
+    height: 65px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #f80;
+    background-color: #222;
+    border: #f80 solid 2px;
+    border-radius: 6%;
+    user-select: none;
+
+    // next
+    &.Cell-next {
+        cursor: pointer;
+        background-color: #000;
+    }
+
+    // prev
+    &.Cell-prev {
+        cursor: pointer;
+        background-color: #ff8800dd;
+        color: #000;
+    }
+
+    // last
+    &.Cell-last {
+        cursor: pointer;
+        background-color: #f80;
+        color: #000;
+        transform: scale(1.25);
+        box-shadow: 0 0 5px 2px #000;
+
+        &.Cell-lose {
+            background-color: #a00;
+            border-color: #a00;
+            color: #fff;
+        }
+
+        &.Cell-win {
+            background-color: #0a0;
+            border-color: #0a0;
+            color: #fff;
+        }
+    }
+}

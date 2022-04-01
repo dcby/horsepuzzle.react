@@ -1,0 +1,84 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest"
+    ],
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "sort-imports": [
+            "error",
+            {
+                "allowSeparatedGroups": true,
+                "ignoreDeclarationSort": true
+            }
+        ],
+        "import/order": [
+            "error",
+            {
+                "alphabetize": {
+                    "order": "asc"
+                }
+            }
+        ],
+        "react/jsx-tag-spacing": [
+            "error",
+            {
+                "closingSlash": "never",
+                "beforeSelfClosing": "always",
+                "afterOpening": "never",
+                "beforeClosing": "never"
+            }
+        ],
+        "react/self-closing-comp": [
+            "error",
+            {
+                "component": true,
+                "html": false
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": [
+                "*.ts",
+                "*.tsx"
+            ],
+            "extends": [
+                "eslint:recommended",
+                "plugin:@typescript-eslint/recommended"
+            ],
+            "rules": {
+                "brace-style": "off",
+                "indent": "off",
+                "keyword-spacing": "error",
+                "space-before-blocks": "off",
+                "space-before-function-paren": "off",
+                "@typescript-eslint/brace-style": "error",
+                "@typescript-eslint/explicit-member-accessibility": "error",
+                "@typescript-eslint/indent": [
+                    "error",
+                    2
+                ],
+                "@typescript-eslint/space-before-blocks": "error",
+                "@typescript-eslint/space-before-function-paren": [
+                    "error",
+                    {
+                        "anonymous": "always",
+                        "asyncArrow": "always",
+                        "named": "never"
+                    }
+                ]
+            }
+        }
+    ]
+}
